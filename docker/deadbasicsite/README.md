@@ -16,4 +16,5 @@ Trying basic nginx container.
 5. See exposed ports from nginx `docker port deadbasicsite`
 6. See VM's ip address `docker-machine ip default`
 7. Open ip with port on the browser
-
+8. To stop and remove the container, `docker stop deadbasicsite && docker rm
+   deadbasicsite`
