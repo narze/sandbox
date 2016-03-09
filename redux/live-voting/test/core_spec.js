@@ -1,7 +1,7 @@
 import { List, Map } from 'immutable';
 import { expect } from 'chai';
 
-import { setEntries, next } from '../src/core';
+import { setEntries, next, vote } from '../src/core';
 
 describe('application logic', () => {
   describe('setEntries', () => {
@@ -28,6 +28,55 @@ describe('application logic', () => {
           pair: List.of('Waterzonic', 'S2O Festival')
         }),
         entries: List.of('Take That')
+      }));
+    });
+  });
+
+  describe('vote', () => {
+    it('creates a tally for the voted entry', () => {
+      const state = Map({
+        vote: Map({
+          pair: List.of('Waterzonic', 'S2O Festival')
+        }),
+        entries: List()
+      });
+
+      const nextState = vote(state, 'Waterzonic');
+
+      expect(nextState).to.equal(Map({
+        vote: Map({
+          pair: List.of('Waterzonic', 'S2O Festival'),
+          tally: Map({
+            'Waterzonic': 1
+          })
+        }),
+        entries: List()
+      }));
+    });
+
+    it('adds to existing tally for the voted tally', () => {
+      const state = Map({
+        vote: Map({
+          pair: List.of('Waterzonic', 'S2O Festival'),
+          tally: Map({
+            'Waterzonic': 1,
+            'S2O Festival': 2
+          })
+        }),
+        entries: List()
+      });
+
+      const nextState = vote(state, 'S2O Festival');
+
+      expect(nextState).to.equal(Map({
+        vote: Map({
+          pair: List.of('Waterzonic', 'S2O Festival'),
+          tally: Map({
+            'Waterzonic': 1,
+            'S2O Festival': 3
+          })
+        }),
+        entries: List()
       }));
     });
   });
