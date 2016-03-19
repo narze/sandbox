@@ -34,3 +34,6 @@ len (a:b) = 1 + len b
 sumAll [] = 0
 sumAll (a:b) = a + sumAll b
 
+doubleAll :: [Int] -> [Int]
+doubleAll [] = []
+doubleAll (a:b) = (a * 2) : doubleAll(b)
