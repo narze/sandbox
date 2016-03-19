@@ -105,3 +105,46 @@ Reduce
 - `productAll :: [Int] -> Int`
 - `sum = foldr (+) 0`
 - `product = foldr (*) 1`
+
+Data Structure
+- `data User = User String String String`
+- `getFirstName :: User -> String` (Optional)
+- `getFirstName (User firstName _ _) = firstName`
+- `getLastName (User _ lastName _) = lastName`
+- `getUsername (User _ _ username) = username`
+- It will fail in GHCi - Must use `data User = User String String String deriving (Show)`
+- `data Color = Red | Green | Blue deriving(Show)`
+
+Show ?
+------
+- Instead of deriving(Show) we can implement ourself ...
+```
+instance Show Color where
+    show Red = "Color Red"
+    show Green = "Color Green"
+    show Blue = "Color Blue"
+```
+
+Record
+```
+data User = User {
+    firstName::String,
+    lastName::String,
+    username::String
+} deriving(Show)
+```
+
+```
+user = User "Manassarn" "Manoonchai" "narze"
+-- or 
+user = User {firstName = "Manassarn", lastName = "Manoonchai", username = "narze"}
+
+-- update
+updatedUser = user { username = "monosor" }
+```
+
+Defining Tree
+`data Tree a = Empty | Node a (Tree a) (Tree a)`
+
+- `:t Something`
+- `:info Something`

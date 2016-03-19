@@ -78,3 +78,23 @@ reduce fn init (x:xs) = x `fn` reduce fn init xs
 
 reducedProductAll = reduce (*) 1
 reducedSumAll x = reduce (+) 0 x -- uncurried
+
+--data User = User String String String deriving(Show)
+--getFirstName :: User -> String
+--getLastName :: User -> String
+--getUsername :: User -> String
+--getFirstName (User firstName _ _) = firstName
+--getLastName (User _ lastName _) = lastName
+--getUsername (User _ _ username) = username
+
+data User = User {
+  firstName::String,
+  lastName::String,
+  username::String
+} deriving(Show)
+
+data Tree a = Empty | Node a (Tree a) (Tree a) deriving(Show)
+
+tree1 = Node 1 Empty Empty
+tree2 = Node '2' (Node '3' Empty Empty) Empty
+
