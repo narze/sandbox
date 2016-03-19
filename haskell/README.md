@@ -130,3 +130,9 @@ updatedUser = user { username = "monosor" }
 
 ## Binary Tree Structure
 `data Tree a = Empty | Node a (Tree a) (Tree a)`
+
+## More To Read
+- [Learn You A Haskell](http://learnyouahaskell.com/)
+- [Happy Learn Haskell](http://www.happylearnhaskelltutorial.com/)
+- [Learn Haskell In Y Minutes](https://learnxinyminutes.com/docs/haskell/)
+- [Real World Haskell](http://book.realworldhaskell.org/read/)
