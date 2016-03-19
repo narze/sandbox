@@ -66,3 +66,7 @@ x2 = (* 2)
 dbAll = map' x2
 db1to10 = dbAll [1..10]
 
+-- Reduce
+productAll :: [Int] -> Int
+productAll [x] = x -- or productAll[] = 0
+productAll (x:y) = x * productAll y
