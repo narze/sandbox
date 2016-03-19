@@ -51,4 +51,12 @@ square x = x ^ 2
 dx x = map' double x
 sx x = map' square x
 
-
+-- Function composition
+compose :: (b -> c) -> (a -> b) -> (a -> c)
+compose f g = (\x -> f(g x))
+-- is not the same as...
+-- compose f g x = f(g x)
+sqdb = compose square double
+sqdb2 = square . double
+pipe g f = f . g
+dps = double `pipe` square
