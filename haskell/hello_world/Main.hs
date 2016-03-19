@@ -70,3 +70,11 @@ db1to10 = dbAll [1..10]
 productAll :: [Int] -> Int
 productAll [x] = x -- or productAll[] = 0
 productAll (x:y) = x * productAll y
+-- We want to refactor productAll and sumAll...
+-- reduce fn init list = ...
+reduce :: (Int -> Int -> Int) -> Int -> [Int] -> Int
+reduce _ init [] = init
+reduce fn init (x:xs) = x `fn` reduce fn init xs
+
+reducedProductAll = reduce (*) 1
+reducedSumAll x = reduce (+) 0 x -- uncurried

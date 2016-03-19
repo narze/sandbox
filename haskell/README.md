@@ -100,3 +100,8 @@ Currying
 - `f = (+2)` then `f 3`
 - `map' (*2) [1..5]`
 - See ramda.js for javascript implementation
+
+Reduce
+- `productAll :: [Int] -> Int`
+- `sum = foldr (+) 0`
+- `product = foldr (*) 1`
