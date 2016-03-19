@@ -27,5 +27,7 @@ Type Check
 - `> :t function_name`
 - `> :t f` # f :: Num a => a -> a
 - Try add type to f `f :: Int - Int`
-- :t (+) # (+) :: Num a => a -> a -> a
-- :t (^) # (^) :: (Integral b, Num a) => a -> b -> a
+- `:t (+)` # (+) :: Num a => a -> a -> a
+- `:t (^)` # (^) :: (Integral b, Num a) => a -> b -> a
+
+- `student :: String -> Int -> (String, Int)` returns tuple of (string, integer)
