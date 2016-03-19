@@ -30,4 +30,22 @@ Type Check
 - `:t (+)` # (+) :: Num a => a -> a -> a
 - `:t (^)` # (^) :: (Integral b, Num a) => a -> b -> a
 
+Code
+----
 - `student :: String -> Int -> (String, Int)` returns tuple of (string, integer)
+
+
+Simple Commands
+---------------
+- `it` outputs latest returned command
+- `head [1,2,3,4,5]` # 1
+- `tail [1,2,3,4,5]` # [2,3,4,5]
+- `take 2 [1,2,3,4,5]` # [1,2]
+- `drop 2 [1,2,3,4,5]` # [3,4,5]
+- `[1..5]` # [1,2,3,4,5]
+- `[1..]` # Infinite list
+
+Lazy Evaluation
+---------------
+- `head [1..]` # 1
+- `take 5 [1..]` [1,2,3,4,5]
