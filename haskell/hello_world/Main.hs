@@ -36,4 +36,8 @@ sumAll (a:b) = a + sumAll b
 
 doubleAll :: [Int] -> [Int]
 doubleAll [] = []
-doubleAll (a:b) = (a * 2) : doubleAll(b)
+doubleAll (a:b) = a * 2 : doubleAll b
+
+sqAll [] = []
+sqAll (a:b) = a ^ 2 : sqAll b
+
