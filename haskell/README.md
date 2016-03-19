@@ -44,8 +44,17 @@ Simple Commands
 - `drop 2 [1,2,3,4,5]` # [3,4,5]
 - `[1..5]` # [1,2,3,4,5]
 - `[1..]` # Infinite list
+- `[1,3..10]` # [1,3,5,7,9]
+- `[1,-3..(-10)]` # [1,-3,-7]
+- `length [1..10]` # 10
 
 Lazy Evaluation
 ---------------
 - `head [1..]` # 1
 - `take 5 [1..]` [1,2,3,4,5]
+
+GHCi
+----
+Definding function
+- Use `let`
+- `let f x y = x^2 + y^2`
