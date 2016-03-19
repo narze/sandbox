@@ -23,6 +23,10 @@ fibo x = fibo (x - 1) + fibo (x - 2)
 
 [x,y,z] = [1,2,3]
 
-xx:xs = [1,2,3,4]
+xx:xs = [1,2,3,4] -- xx = 1, xs = [2,3,4]
 
+x1:xs1 = xs -- x1 = 2, xs1 = [3,4]
 
+-- Count list
+len [] = 0
+len (a:b) = 1 + len b
