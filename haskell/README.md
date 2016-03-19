@@ -92,3 +92,10 @@ Higher Order Function
 - `map' f (a:b) = f a : map' f b`
 - `map' (\x -> x * 2) [1..5]`
 
+Function composition
+- `compose f g = (\x -> f(g x))`
+- `(|>) g f = f . g`
+
+Currying
+- `f = (+2)` then `f 3`
+- `map' (*2) [1..5]`
