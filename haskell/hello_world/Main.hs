@@ -41,3 +41,14 @@ doubleAll (a:b) = a * 2 : doubleAll b
 sqAll [] = []
 sqAll (a:b) = a ^ 2 : sqAll b
 
+-- Higher Order Function
+map' f [] = []
+map' f (a:b) = f a : map' f b
+
+double x = x * 2
+square x = x ^ 2
+
+dx x = map' double x
+sx x = map' square x
+
+

@@ -83,6 +83,12 @@ List Concatenation
 
 GHCi
 ----
-Definding function
+Defining function
 - Use `let`
 - `let f x y = x^2 + y^2`
+
+Higher Order Function
+- `map' f [] = []`
+- `map' f (a:b) = f a : map' f b`
+- `map' (\x -> x * 2) [1..5]`
+
