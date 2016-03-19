@@ -60,3 +60,9 @@ sqdb = compose square double
 sqdb2 = square . double
 pipe g f = f . g
 dps = double `pipe` square
+
+-- Currying
+x2 = (* 2)
+dbAll = map' x2
+db1to10 = dbAll [1..10]
+
