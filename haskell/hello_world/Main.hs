@@ -30,3 +30,7 @@ x1:xs1 = xs -- x1 = 2, xs1 = [3,4]
 -- Count list
 len [] = 0
 len (a:b) = 1 + len b
+
+sumAll [] = 0
+sumAll (a:b) = a + sumAll b
+
