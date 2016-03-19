@@ -13,3 +13,7 @@ student name age = (name, age)
 factorial 0 = 1
 factorial x = x * factorial(x - 1)
 
+sum' :: Int -> Int
+sum' 1 = 1
+sum' x = x + sum'(x - 1)
+
