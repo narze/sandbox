@@ -21,5 +21,8 @@ fibo 0 = 0
 fibo 1 = 1
 fibo x = fibo (x - 1) + fibo (x - 2)
 
+[x,y,z] = [1,2,3]
+
+xx:xs = [1,2,3,4]
 
 
