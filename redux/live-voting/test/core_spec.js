@@ -30,6 +30,50 @@ describe('application logic', () => {
         entries: List.of('Take That')
       }));
     });
+
+    it('puts the winner of current vote back to entries', () => {
+      const state = Map({
+        vote: Map({
+          pair: List.of('Waterzonic', 'S2O Festival'),
+          tally: Map({
+            'Waterzonic': 4,
+            'S2O Festival': 3
+          }),
+        }),
+        entries: List.of('Take That', 'Jump Up', 'Hubba Stadium')
+      });
+
+      const nextState = next(state);
+
+      expect(nextState).to.equal(Map({
+        vote: Map({
+          pair: List.of('Take That', 'Jump Up')
+        }),
+        entries: List.of('Hubba Stadium', 'Waterzonic')
+      }));
+    });
+
+    it('puts the both of current tied vote back to entries', () => {
+      const state = Map({
+        vote: Map({
+          pair: List.of('Waterzonic', 'S2O Festival'),
+          tally: Map({
+            'Waterzonic': 2,
+            'S2O Festival': 2
+          }),
+        }),
+        entries: List.of('Take That', 'Jump Up', 'Hubba Stadium')
+      });
+
+      const nextState = next(state);
+
+      expect(nextState).to.equal(Map({
+        vote: Map({
+          pair: List.of('Take That', 'Jump Up')
+        }),
+        entries: List.of('Hubba Stadium', 'Waterzonic', 'S2O Festival')
+      }));
+    });
   });
 
   describe('vote', () => {
