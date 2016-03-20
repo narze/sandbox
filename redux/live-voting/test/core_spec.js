@@ -74,6 +74,25 @@ describe('application logic', () => {
         entries: List.of('Hubba Stadium', 'Waterzonic', 'S2O Festival')
       }));
     });
+
+    it('marks winner when only one entry left', () => {
+      const state = Map({
+        vote: Map({
+          pair: List.of('Waterzonic', 'S2O Festival'),
+          tally: Map({
+            'Waterzonic': 4,
+            'S2O Festival': 3
+          }),
+        }),
+        entries: List()
+      });
+
+      const nextState = next(state);
+
+      expect(nextState).to.equal(Map({
+        winner: 'Waterzonic'
+      }));
+    });
   });
 
   describe('vote', () => {
