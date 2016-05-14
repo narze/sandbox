@@ -6,9 +6,10 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /\.js$/,
+        test: /\.es6$/,
         exclude: /node_modules/,
-        loader: 'jshint-loader'
+        loader: 'eslint-loader',
+        exclude: /bundle\.js$/
       }
     ],
     loaders: [
