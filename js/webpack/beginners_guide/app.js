@@ -1,5 +1,7 @@
-require('./logger')
+var logger = require('./logger')
 
 document.write('Hello World, I am still watching.')
 
 console.log('App loaded')
+
+logger.initLogger()
