@@ -18,5 +18,9 @@
     "node-libs-browser": "^1.0.0",
     "strip-loader": "^0.1.2",
     "webpack": "^1.13.0"
+  },
+  "dependencies": {
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
   }
 }

@@ -21,4 +21,5 @@
 - Use `strip-loader` in `webpack-production.config.js`
 - `webpack --config webpack-production.config.js -p`
 
-
+## React
+- `npm install react react-dom --save`
