@@ -1,7 +1,8 @@
-var logger = require('./logger');
+import React from "react";
+import ReactDOM from "react-dom";
+import Hello from "./hello";
 
-document.write('Hello World, I am still watching.');
-
-console.log('App loaded');
-
-logger.initLogger();
+ReactDOM.render(
+  <Hello name="World" />,
+  document.getElementById('app')
+);
