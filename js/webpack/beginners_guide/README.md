@@ -12,7 +12,7 @@
 - `webpack-dev-server --inline` & `open http://localhost:8080/` to get hot-loading w/o status bar
 
 ## Babel & JSHint loaders
-- `npm init && npm install babel-core babel-loader jshint jshint-loader node-libs-browser babel-preset-es2015 babel-preset-react webpack  --save-dev`
+- `npm init && npm install babel-core babel-loader jshint jshint-loader node-libs-browser babel-preset-es2015 babel-preset-react webpack --save-dev`
 - Add loaders in `webpack.config.js`
 
 ## Production : Minify & Stripping `console.log`
@@ -23,3 +23,6 @@
 
 ## React
 - `npm install react react-dom --save`
+
+## ESLint
+- `npm install --save-dev babel-eslint eslint eslint-config-airbnb eslint-loader eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react`
