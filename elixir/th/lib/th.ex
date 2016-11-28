@@ -18,4 +18,20 @@ defmodule TH do
     |> count_chars
     |> sort
   end
+
+  def filter(words, chars) do
+    words
+    |> String.split(~r{[ \n]}, trim: true)
+    |> Enum.filter(fn(word) ->
+      Enum.all?(String.codepoints(word), fn(c) ->
+        String.contains?(chars, c)
+      end)
+    end)
+    |> Enum.join(" ")
+  end
+
+  def filter_in_file(filename, chars) do
+    File.read!(filename)
+    |> filter(chars)
+  end
 end

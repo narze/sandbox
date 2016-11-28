@@ -32,4 +32,21 @@ defmodule THTest do
       {"ด", 1},
     ]
   end
+
+  test "filter words with chars" do
+    words = "งง งาน ทาง เกา นาน กาง ขาน"
+    expected = "งง งาน นาน กาง"
+    assert TH.filter(words, "งกาน") == expected
+  end
+
+  test "supports newline" do
+    words = "งง\nงาน\nทาง\nเกา\nนาน\nกาง\nขาน"
+    expected = "งง งาน นาน กาง"
+    assert TH.filter(words, "งกาน") == expected
+  end
+
+  test "filter in file" do
+    expected = "งง งาน นาน กาง"
+    assert TH.filter_in_file('test/words2.txt', "งกาน") == expected
+  end
 end
